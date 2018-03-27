@@ -14,8 +14,7 @@
         "php": ">=7.0.0",
         "diablomedia/zendframework1-config": "^1.0.0",
         "diablomedia/zendframework1-loader": "^1.0.0",
-        "diablomedia/zendframework1-file": "*",
-        "diablomedia/zendframework1-validate": "*"
+        "diablomedia/zendframework1-validate": "^1.0.0"
     },
     "autoload": {
         "psr-0": {
@@ -50,7 +49,7 @@
         "test-with-coverage": "phpunit --coverage-clover=clover.xml ./tests",
         "phpstan": "phpstan analyze -l4 -c phpstan.neon --no-progress ./src --ansi"
     },
-    "suggests": {
+    "suggest": {
         "ext-hash": "Used in the File_Hash vaidator",
         "ext-fileinfo": "Optionally used in the File_MimeType validator"
     }
