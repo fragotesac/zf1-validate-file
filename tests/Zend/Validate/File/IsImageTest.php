@@ -64,7 +64,7 @@ class Zend_Validate_File_IsImageTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[1],
                 $validator->isValid(dirname(__FILE__) . '/_files/picture.jpg', $files),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
     }
@@ -167,7 +167,7 @@ class Zend_Validate_File_IsImageTest extends PHPUnit\Framework\TestCase
         $validator = new Zend_Validate_File_IsImage(array(
             'image/gif',
             'image/jpg',
-            'magicfile' => $magicFile,
+            'magicfile'   => $magicFile,
             'headerCheck' => true));
 
         $this->assertEquals($magicFile, $validator->getMagicFile());

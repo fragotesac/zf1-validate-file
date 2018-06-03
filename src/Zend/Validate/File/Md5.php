@@ -41,7 +41,7 @@ class Zend_Validate_File_Md5 extends Zend_Validate_File_Hash
      */
     protected $_messageTemplates = array(
         self::DOES_NOT_MATCH => "File '%value%' does not match the given md5 hashes",
-        self::NOT_DETECTED   => "A md5 hash could not be evaluated for the given file",
+        self::NOT_DETECTED   => 'A md5 hash could not be evaluated for the given file',
         self::NOT_FOUND      => "File '%value%' is not readable or does not exist",
     );
 
@@ -158,13 +158,13 @@ class Zend_Validate_File_Md5 extends Zend_Validate_File_Hash
             return $this->_throw($file, self::NOT_FOUND);
         }
 
-        $hashes = array_unique(array_keys($this->_hash));
+        $hashes   = array_unique(array_keys($this->_hash));
         $filehash = hash_file('md5', $value);
         if ($filehash === false) {
             return $this->_throw($file, self::NOT_DETECTED);
         }
 
-        foreach($hashes as $hash) {
+        foreach ($hashes as $hash) {
             if ($filehash === $hash) {
                 return true;
             }

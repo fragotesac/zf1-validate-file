@@ -54,7 +54,7 @@ class Zend_Validate_File_ExtensionTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[1],
                 $validator->isValid(dirname(__FILE__) . '/_files/testsize.mo'),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
 

@@ -41,8 +41,8 @@ class Zend_Validate_File_WordCount extends Zend_Validate_File_Count
      * @var array Error message templates
      */
     protected $_messageTemplates = array(
-        self::TOO_MUCH => "Too much words, maximum '%max%' are allowed but '%count%' were counted",
-        self::TOO_LESS => "Too less words, minimum '%min%' are expected but '%count%' were counted",
+        self::TOO_MUCH  => "Too much words, maximum '%max%' are allowed but '%count%' were counted",
+        self::TOO_LESS  => "Too less words, minimum '%min%' are expected but '%count%' were counted",
         self::NOT_FOUND => "File '%value%' is not readable or does not exist",
     );
 
@@ -63,7 +63,7 @@ class Zend_Validate_File_WordCount extends Zend_Validate_File_Count
             return $this->_throw($file, self::NOT_FOUND);
         }
 
-        $content = file_get_contents($value);
+        $content      = file_get_contents($value);
         $this->_count = str_word_count($content);
         if (($this->_max !== null) && ($this->_count > $this->_max)) {
             return $this->_throw($file, self::TOO_MUCH);

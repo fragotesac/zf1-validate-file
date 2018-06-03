@@ -39,7 +39,7 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
     public function testBasic()
     {
         $_FILES = array(
-            'test'  => array(
+            'test' => array(
                 'name'     => 'test1',
                 'type'     => 'text',
                 'size'     => 200,
@@ -152,7 +152,7 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
     public function testGetFiles()
     {
         $_FILES = array(
-            'test'  => array(
+            'test' => array(
                 'name'     => 'test1',
                 'type'     => 'text',
                 'size'     => 200,
@@ -166,7 +166,7 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
                 'error'    => 1));
 
         $files = array(
-            'test'  => array(
+            'test' => array(
                 'name'     => 'test1',
                 'type'     => 'text',
                 'size'     => 200,
@@ -188,9 +188,9 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
 
         try {
             $this->assertEquals(array(), $validator->getFiles('test5'));
-            $this->fail("Missing exception");
+            $this->fail('Missing exception');
         } catch (Zend_Validate_Exception $e) {
-            $this->assertContains("was not found", $e->getMessage());
+            $this->assertContains('was not found', $e->getMessage());
         }
     }
 
@@ -202,7 +202,7 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
     public function testSetFiles()
     {
         $files = array(
-            'test'  => array(
+            'test' => array(
                 'name'     => 'test1',
                 'type'     => 'text',
                 'size'     => 200,
@@ -216,7 +216,7 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
                 'error'    => 1));
 
         $_FILES = array(
-            'test'  => array(
+            'test' => array(
                 'name'     => 'test3',
                 'type'     => 'text3',
                 'size'     => 203,
@@ -238,7 +238,7 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
      */
     public function testGetFilesReturnsEmptyArrayWhenFilesSuperglobalIsNull()
     {
-        $_FILES = NULL;
+        $_FILES    = null;
         $validator = new Zend_Validate_File_Upload();
         $validator->setFiles();
         $this->assertEquals(array(), $validator->getFiles());
@@ -250,7 +250,7 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
     public function testGetFilesReturnsEmptyArrayAfterSetFilesIsCalledWithNull()
     {
         $validator = new Zend_Validate_File_Upload();
-        $validator->setFiles(NULL);
+        $validator->setFiles(null);
         $this->assertEquals(array(), $validator->getFiles());
     }
 
@@ -279,5 +279,4 @@ class Zend_Validate_File_UploadTest extends PHPUnit\Framework\TestCase
             $validator->getMessages()
         );
     }
-
 }

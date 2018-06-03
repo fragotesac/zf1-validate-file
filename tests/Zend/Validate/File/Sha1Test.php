@@ -52,7 +52,7 @@ class Zend_Validate_File_Sha1Test extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[1],
                 $validator->isValid(dirname(__FILE__) . '/_files/picture.jpg'),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
 

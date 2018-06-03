@@ -40,18 +40,18 @@ class Zend_Validate_File_ExistsTest extends PHPUnit\Framework\TestCase
      */
     public function testBasic()
     {
-        $baseDir = dirname(__FILE__);
+        $baseDir        = dirname(__FILE__);
         $valuesExpected = array(
             array($baseDir, 'testsize.mo', false),
             array($baseDir . '/_files', 'testsize.mo', true)
         );
 
         $files = array(
-            'name'        => 'testsize.mo',
-            'type'        => 'text',
-            'size'        => 200,
-            'tmp_name'    => dirname(__FILE__) . '/_files/testsize.mo',
-            'error'       => 0
+            'name'     => 'testsize.mo',
+            'type'     => 'text',
+            'size'     => 200,
+            'tmp_name' => dirname(__FILE__) . '/_files/testsize.mo',
+            'error'    => 0
         );
 
         foreach ($valuesExpected as $element) {
@@ -59,12 +59,12 @@ class Zend_Validate_File_ExistsTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[2],
                 $validator->isValid($element[1]),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
             $this->assertEquals(
                 $element[2],
                 $validator->isValid($element[1], $files),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
 
@@ -87,12 +87,12 @@ class Zend_Validate_File_ExistsTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[2],
                 $validator->isValid($element[1]),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
             $this->assertEquals(
                 $element[2],
                 $validator->isValid($element[1], $files),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
 
@@ -106,12 +106,12 @@ class Zend_Validate_File_ExistsTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[2],
                 $validator->isValid($element[1]),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
             $this->assertEquals(
                 $element[3],
                 $validator->isValid($element[1], $files),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
     }

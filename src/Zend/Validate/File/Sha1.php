@@ -41,7 +41,7 @@ class Zend_Validate_File_Sha1 extends Zend_Validate_File_Hash
      */
     protected $_messageTemplates = array(
         self::DOES_NOT_MATCH => "File '%value%' does not match the given sha1 hashes",
-        self::NOT_DETECTED   => "A sha1 hash could not be evaluated for the given file",
+        self::NOT_DETECTED   => 'A sha1 hash could not be evaluated for the given file',
         self::NOT_FOUND      => "File '%value%' is not readable or does not exist",
     );
 
@@ -158,7 +158,7 @@ class Zend_Validate_File_Sha1 extends Zend_Validate_File_Hash
             return $this->_throw($file, self::NOT_FOUND);
         }
 
-        $hashes = array_unique(array_keys($this->_hash));
+        $hashes   = array_unique(array_keys($this->_hash));
         $filehash = hash_file('sha1', $value);
         if ($filehash === false) {
             return $this->_throw($file, self::NOT_DETECTED);

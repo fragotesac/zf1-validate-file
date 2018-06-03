@@ -52,7 +52,7 @@ class Zend_Validate_File_ExcludeMimeTypeTest extends PHPUnit\Framework\TestCase
         );
 
         $filetest = dirname(__FILE__) . '/_files/picture.jpg';
-        $files = array(
+        $files    = array(
             'name'     => 'picture.jpg',
             'type'     => 'image/jpeg',
             'size'     => 200,
@@ -66,7 +66,7 @@ class Zend_Validate_File_ExcludeMimeTypeTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[1],
                 $validator->isValid($filetest, $files),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
     }

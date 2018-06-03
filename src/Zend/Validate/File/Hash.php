@@ -41,7 +41,7 @@ class Zend_Validate_File_Hash extends Zend_Validate_Abstract
      */
     protected $_messageTemplates = array(
         self::DOES_NOT_MATCH => "File '%value%' does not match the given hashes",
-        self::NOT_DETECTED   => "A hash could not be evaluated for the given file",
+        self::NOT_DETECTED   => 'A hash could not be evaluated for the given file',
         self::NOT_FOUND      => "File '%value%' is not readable or does not exist"
     );
 
@@ -93,7 +93,7 @@ class Zend_Validate_File_Hash extends Zend_Validate_Abstract
      */
     public function setHash($options)
     {
-        $this->_hash  = null;
+        $this->_hash = null;
         $this->addHash($options);
 
         return $this;
@@ -110,8 +110,8 @@ class Zend_Validate_File_Hash extends Zend_Validate_Abstract
     {
         if (is_string($options)) {
             $options = array($options);
-        } else if (!is_array($options)) {
-            throw new Zend_Validate_Exception("False parameter given");
+        } elseif (!is_array($options)) {
+            throw new Zend_Validate_Exception('False parameter given');
         }
 
         $known = hash_algos();
@@ -157,7 +157,7 @@ class Zend_Validate_File_Hash extends Zend_Validate_Abstract
                 return $this->_throw($file, self::NOT_DETECTED);
             }
 
-            foreach($hashes as $hash) {
+            foreach ($hashes as $hash) {
                 if ($filehash === $hash) {
                     return true;
                 }

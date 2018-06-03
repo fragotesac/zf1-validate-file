@@ -134,8 +134,8 @@ class Zend_Validate_File_ImageSize extends Zend_Validate_Abstract
                     $options['maxheight'] = array_shift($argv);
                 }
             }
-        } else if (!is_array($options)) {
-            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+        } elseif (!is_array($options)) {
+            throw new Zend_Validate_Exception('Invalid options to validator provided');
         }
 
         if (isset($options['minheight']) || isset($options['minwidth'])) {
@@ -199,20 +199,20 @@ class Zend_Validate_File_ImageSize extends Zend_Validate_Abstract
     {
         if (isset($options['minwidth'])) {
             if (($this->_maxwidth !== null) and ($options['minwidth'] > $this->_maxwidth)) {
-                throw new Zend_Validate_Exception("The minimum image width must be less than or equal to the "
+                throw new Zend_Validate_Exception('The minimum image width must be less than or equal to the '
                     . " maximum image width, but {$options['minwidth']} > {$this->_maxwidth}");
             }
         }
 
         if (isset($options['maxheight'])) {
             if (($this->_maxheight !== null) and ($options['minheight'] > $this->_maxheight)) {
-                throw new Zend_Validate_Exception("The minimum image height must be less than or equal to the "
+                throw new Zend_Validate_Exception('The minimum image height must be less than or equal to the '
                     . " maximum image height, but {$options['minheight']} > {$this->_maxheight}");
             }
         }
 
         if (isset($options['minwidth'])) {
-            $this->_minwidth  = (int) $options['minwidth'];
+            $this->_minwidth = (int) $options['minwidth'];
         }
 
         if (isset($options['minheight'])) {
@@ -234,20 +234,20 @@ class Zend_Validate_File_ImageSize extends Zend_Validate_Abstract
     {
         if (isset($options['maxwidth'])) {
             if (($this->_minwidth !== null) and ($options['maxwidth'] < $this->_minwidth)) {
-                throw new Zend_Validate_Exception("The maximum image width must be greater than or equal to the "
+                throw new Zend_Validate_Exception('The maximum image width must be greater than or equal to the '
                     . "minimum image width, but {$options['maxwidth']} < {$this->_minwidth}");
             }
         }
 
         if (isset($options['maxheight'])) {
             if (($this->_minheight !== null) and ($options['maxheight'] < $this->_minheight)) {
-                throw new Zend_Validate_Exception("The maximum image height must be greater than or equal to the "
+                throw new Zend_Validate_Exception('The maximum image height must be greater than or equal to the '
                     . "minimum image height, but {$options['maxheight']} < {$this->_minwidth}");
             }
         }
 
         if (isset($options['maxwidth'])) {
-            $this->_maxwidth  = (int) $options['maxwidth'];
+            $this->_maxwidth = (int) $options['maxwidth'];
         }
 
         if (isset($options['maxheight'])) {

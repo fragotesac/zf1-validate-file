@@ -56,7 +56,7 @@ class Zend_Validate_File_IsImage extends Zend_Validate_File_MimeType
             $mimetype = $mimetype->toArray();
         }
 
-        $temp    = array();
+        $temp = array();
         // http://de.wikipedia.org/wiki/Liste_von_Dateiendungen
         // http://www.iana.org/assignments/media-types/image/
         $default = array(
@@ -149,14 +149,14 @@ class Zend_Validate_File_IsImage extends Zend_Validate_File_MimeType
     protected function _throw($file, $errorType)
     {
         $this->_value = $file['name'];
-        switch($errorType) {
-            case Zend_Validate_File_MimeType::FALSE_TYPE :
+        switch ($errorType) {
+            case Zend_Validate_File_MimeType::FALSE_TYPE:
                 $errorType = self::FALSE_TYPE;
                 break;
-            case Zend_Validate_File_MimeType::NOT_DETECTED :
+            case Zend_Validate_File_MimeType::NOT_DETECTED:
                 $errorType = self::NOT_DETECTED;
                 break;
-            case Zend_Validate_File_MimeType::NOT_READABLE :
+            case Zend_Validate_File_MimeType::NOT_READABLE:
                 $errorType = self::NOT_READABLE;
                 break;
         }

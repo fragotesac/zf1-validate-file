@@ -51,22 +51,22 @@ class Zend_Validate_File_CountTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $element[1],
                 $validator->isValid(dirname(__FILE__) . '/_files/testsize.mo'),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
             $this->assertEquals(
                 $element[2],
                 $validator->isValid(dirname(__FILE__) . '/_files/testsize2.mo'),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
             $this->assertEquals(
                 $element[3],
                 $validator->isValid(dirname(__FILE__) . '/_files/testsize3.mo'),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
             $this->assertEquals(
                 $element[4],
                 $validator->isValid(dirname(__FILE__) . '/_files/testsize4.mo'),
-                "Tested with " . var_export($element, 1)
+                'Tested with ' . var_export($element, 1)
             );
         }
     }
@@ -83,9 +83,9 @@ class Zend_Validate_File_CountTest extends PHPUnit\Framework\TestCase
 
         try {
             $validator = new Zend_Validate_File_Count(array('min' => 5, 'max' => 1));
-            $this->fail("Missing exception");
+            $this->fail('Missing exception');
         } catch (Zend_Validate_Exception $e) {
-            $this->assertContains("greater than or equal", $e->getMessage());
+            $this->assertContains('greater than or equal', $e->getMessage());
         }
 
         $validator = new Zend_Validate_File_Count(array('min' => 1, 'max' => 5));
@@ -93,9 +93,9 @@ class Zend_Validate_File_CountTest extends PHPUnit\Framework\TestCase
 
         try {
             $validator = new Zend_Validate_File_Count(array('min' => 5, 'max' => 1));
-            $this->fail("Missing exception");
+            $this->fail('Missing exception');
         } catch (Zend_Validate_Exception $e) {
-            $this->assertContains("greater than or equal", $e->getMessage());
+            $this->assertContains('greater than or equal', $e->getMessage());
         }
     }
 
@@ -112,9 +112,9 @@ class Zend_Validate_File_CountTest extends PHPUnit\Framework\TestCase
 
         try {
             $validator->setMin(20000);
-            $this->fail("Missing exception");
+            $this->fail('Missing exception');
         } catch (Zend_Validate_Exception $e) {
-            $this->assertContains("less than or equal", $e->getMessage());
+            $this->assertContains('less than or equal', $e->getMessage());
         }
     }
 
@@ -130,9 +130,9 @@ class Zend_Validate_File_CountTest extends PHPUnit\Framework\TestCase
 
         try {
             $validator = new Zend_Validate_File_Count(array('min' => 5, 'max' => 1));
-            $this->fail("Missing exception");
+            $this->fail('Missing exception');
         } catch (Zend_Validate_Exception $e) {
-            $this->assertContains("greater than or equal", $e->getMessage());
+            $this->assertContains('greater than or equal', $e->getMessage());
         }
     }
 

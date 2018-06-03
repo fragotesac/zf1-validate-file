@@ -54,7 +54,7 @@ class Zend_Validate_File_MimeTypeTest extends PHPUnit\Framework\TestCase
         );
 
         $filetest = dirname(__FILE__) . '/_files/picture.jpg';
-        $files = array(
+        $files    = array(
             'name'     => 'picture.jpg',
             'type'     => 'image/jpg',
             'size'     => 200,
@@ -70,7 +70,7 @@ class Zend_Validate_File_MimeTypeTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $expected,
                 $validator->isValid($filetest, $files),
-                "Test expected " . var_export($expected, 1) . " with " . var_export($options, 1)
+                'Test expected ' . var_export($expected, 1) . ' with ' . var_export($options, 1)
                 . "\nMessages: " . var_export($validator->getMessages(), 1)
             );
         }
@@ -143,7 +143,7 @@ class Zend_Validate_File_MimeTypeTest extends PHPUnit\Framework\TestCase
     {
         $validator = new Zend_Validate_File_MimeType('image/gif');
         if (!empty($_ENV['MAGIC'])) {
-            $mimetype  = $validator->getMagicFile();
+            $mimetype = $validator->getMagicFile();
             $this->assertEquals($_ENV['MAGIC'], $mimetype);
         }
 
@@ -181,7 +181,7 @@ class Zend_Validate_File_MimeTypeTest extends PHPUnit\Framework\TestCase
         );
 
         $filetest = dirname(__FILE__) . '/_files/picture.jpg';
-        $files = array(
+        $files    = array(
             'name'     => 'picture.jpg',
             'type'     => 'image/jpg',
             'size'     => 200,
@@ -197,7 +197,7 @@ class Zend_Validate_File_MimeTypeTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $expected,
                 $validator->isValid($filetest, $files),
-                "Test expected " . var_export($expected, 1) . " with " . var_export($options, 1)
+                'Test expected ' . var_export($expected, 1) . ' with ' . var_export($options, 1)
                 . "\nMessages: " . var_export($validator->getMessages(), 1)
             );
 
@@ -206,7 +206,7 @@ class Zend_Validate_File_MimeTypeTest extends PHPUnit\Framework\TestCase
             $this->assertEquals(
                 $expected,
                 $validator->isValid($filetest, $files),
-                "Test expected " . var_export($expected, 1) . " with " . var_export($options, 1)
+                'Test expected ' . var_export($expected, 1) . ' with ' . var_export($options, 1)
                 . "\nMessages: " . var_export($validator->getMessages(), 1)
             );
         }
@@ -237,7 +237,7 @@ class Zend_Validate_File_MimeTypeTest extends PHPUnit\Framework\TestCase
         }
 
         $filetest = dirname(__FILE__) . '/_files/picture.jpg';
-        $files = array(
+        $files    = array(
             'name'     => 'picture.jpg',
             'size'     => 200,
             'tmp_name' => $filetest,

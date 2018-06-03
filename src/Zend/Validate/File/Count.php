@@ -105,7 +105,7 @@ class Zend_Validate_File_Count extends Zend_Validate_Abstract
         } elseif (is_string($options) || is_numeric($options)) {
             $options = array('max' => $options);
         } elseif (!is_array($options)) {
-            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+            throw new Zend_Validate_Exception('Invalid options to validator provided');
         }
 
         if (1 < func_num_args()) {
@@ -146,7 +146,7 @@ class Zend_Validate_File_Count extends Zend_Validate_Abstract
         }
 
         if (!is_string($min) and !is_numeric($min)) {
-            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+            throw new Zend_Validate_Exception('Invalid options to validator provided');
         }
 
         $min = (integer) $min;
@@ -183,12 +183,12 @@ class Zend_Validate_File_Count extends Zend_Validate_Abstract
         }
 
         if (!is_string($max) and !is_numeric($max)) {
-            throw new Zend_Validate_Exception ('Invalid options to validator provided');
+            throw new Zend_Validate_Exception('Invalid options to validator provided');
         }
 
         $max = (integer) $max;
         if (($this->_min !== null) && ($max < $this->_min)) {
-            throw new Zend_Validate_Exception("The maximum must be greater than or equal to the minimum file count, but "
+            throw new Zend_Validate_Exception('The maximum must be greater than or equal to the minimum file count, but '
                                             . "$max < {$this->_min}");
         }
 
