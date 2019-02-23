@@ -181,7 +181,7 @@ class Zend_Validate_File_Exists extends Zend_Validate_Abstract
     /**
      * Throws an error of the given type
      *
-     * @param  string $file
+     * @param  array $file
      * @param  string $errorType
      * @return false
      */

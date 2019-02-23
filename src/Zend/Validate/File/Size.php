@@ -328,7 +328,7 @@ class Zend_Validate_File_Size extends Zend_Validate_Abstract
      * Returns the unformatted size
      *
      * @param  string $size
-     * @return integer
+     * @return integer|float
      */
     protected function _fromByteString($size)
     {
@@ -343,7 +343,7 @@ class Zend_Validate_File_Size extends Zend_Validate_Abstract
             $value = substr($value, 0, -1);
         }
 
-        $value = trim($value);
+        $value = (float) trim($value);
 
         switch (strtoupper($type)) {
             case 'Y':
@@ -380,7 +380,7 @@ class Zend_Validate_File_Size extends Zend_Validate_Abstract
     /**
      * Throws an error of the given type
      *
-     * @param  string $file
+     * @param  array $file
      * @param  string $errorType
      * @return false
      */
