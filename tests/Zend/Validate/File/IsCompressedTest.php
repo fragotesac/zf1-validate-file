@@ -47,7 +47,7 @@ class Zend_Validate_File_IsCompressedTest extends PHPUnit\Framework\TestCase
             $this->markTestSkipped(
                 'This PHP Version has no finfo, has mime_content_type, '
                 . ' but mime_content_type exhibits buggy behavior on this system.'
-                );
+            );
         }
 
         // Prevent error in the next check

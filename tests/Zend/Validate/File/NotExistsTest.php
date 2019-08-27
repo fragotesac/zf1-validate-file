@@ -65,7 +65,7 @@ class Zend_Validate_File_NotExistsTest extends PHPUnit\Framework\TestCase
                 $element[2],
                 $validator->isValid($element[1], $files),
                 'Tested with ' . var_export($element, 1)
-                );
+            );
         }
 
         $valuesExpected = array(
