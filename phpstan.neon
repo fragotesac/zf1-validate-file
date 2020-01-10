@@ -5,7 +5,6 @@ parameters:
     excludes_analyse:
         - %rootDir%/../../../vendor/*
         - %rootDir%/../../../tests/*
-    bootstrap: %rootDir%/../../../phpstan-bootstrap.php
     ignoreErrors:
         - '#Strict comparison using === between .+ and null will always evaluate to false\.#'
         - '#Strict comparison using === between string\|false and 1 will always evaluate to false\.#'
