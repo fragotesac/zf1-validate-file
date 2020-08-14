@@ -8,7 +8,6 @@ parameters:
     ignoreErrors:
         - '#Strict comparison using === between .+ and null will always evaluate to false\.#'
         - '#Strict comparison using === between string\|false and 1 will always evaluate to false\.#'
-        - '#Strict comparison using === between string and false will always evaluate to false\.#'
         # Defensive coding, can't validate with php type-hints since argument can be multiple types
         -
             message: '#If condition is always false\.#'
