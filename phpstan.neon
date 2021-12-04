@@ -2,12 +2,11 @@ parameters:
     level: 4
     paths:
         - ./
-    excludes_analyse:
+    excludePaths:
         - %rootDir%/../../../vendor/*
         - %rootDir%/../../../tests/*
     ignoreErrors:
         - '#Strict comparison using === between .+ and null will always evaluate to false\.#'
-        - '#Strict comparison using === between string\|false and 1 will always evaluate to false\.#'
         # Defensive coding, can't validate with php type-hints since argument can be multiple types
         -
             message: '#If condition is always false\.#'
@@ -19,3 +18,18 @@ parameters:
         -
             message: '#Comparison operation ">" between 0 and 0 is always false\.#'
             path: './src/Zend/Validate/File/Upload.php'
+        # These seem intentional, not going to change behavior for now
+        -
+            message: "#^PHPDoc type string of property Zend_Validate_File_Crc32\\:\\:\\$_hash is not covariant with PHPDoc type array\\|null of overridden property Zend_Validate_File_Hash\\:\\:\\$_hash\\.$#"
+            count: 1
+            path: src/Zend/Validate/File/Crc32.php
+
+        -
+            message: "#^PHPDoc type string of property Zend_Validate_File_Md5\\:\\:\\$_hash is not covariant with PHPDoc type array\\|null of overridden property Zend_Validate_File_Hash\\:\\:\\$_hash\\.$#"
+            count: 1
+            path: src/Zend/Validate/File/Md5.php
+
+        -
+            message: "#^PHPDoc type string of property Zend_Validate_File_Sha1\\:\\:\\$_hash is not covariant with PHPDoc type array\\|null of overridden property Zend_Validate_File_Hash\\:\\:\\$_hash\\.$#"
+            count: 1
+            path: src/Zend/Validate/File/Sha1.php

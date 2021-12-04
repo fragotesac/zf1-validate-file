@@ -116,7 +116,7 @@ class Zend_Validate_File_Extension extends Zend_Validate_Abstract
      */
     public function getExtension()
     {
-        $extension = explode(',', $this->_extension);
+        $extension = explode(',', $this->_extension ?? '');
 
         return $extension;
     }
