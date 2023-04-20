@@ -31,6 +31,8 @@
  */
 class Zend_Validate_File_FilesSizeTest extends PHPUnit\Framework\TestCase
 {
+    protected $multipleOptionsDetected;
+
     public function setUp(): void
     {
         $this->multipleOptionsDetected = false;
